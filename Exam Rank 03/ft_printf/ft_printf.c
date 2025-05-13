@@ -23,14 +23,14 @@ int ft_putstr(char *str)
 	return (i);
 }
 
-int ft_print_nbr(unsigned char nbr, int base)
+int ft_print_nbr(unsigned int nbr, int base)
 {
 	char *base_set = "0123456789abcdef";
 	int count = 0;
 
 	if (nbr / base > 0)
 		count += ft_print_nbr(nbr / base, base);
-	count += ft_putchar(base_set[nbr / base]);
+	count += ft_putchar(base_set[nbr % base]);
 	return (count);
 }
 
